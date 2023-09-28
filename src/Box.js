@@ -9,14 +9,15 @@
  *
  * BoxList -> Box
  */
+
 function Box({ width, height, bgColor, id, removeBox }) {
-  console.log("bgColor inside box", bgColor)
+  console.log("background color", bgColor)
   return (
     <div className="Box">
       <div style={{
-        backgroundColor: `${bgColor}`,
         width: `${width}px`,
-        height: `${height}px`
+        height: `${height}px`,
+        backgroundColor: bgColor
       }}>
       </div>
       <button onClick={() => removeBox(id)}>X</button>
@@ -26,4 +27,4 @@ function Box({ width, height, bgColor, id, removeBox }) {
 
 }
 
-export default Box
+export default Box;

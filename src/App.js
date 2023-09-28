@@ -1,5 +1,6 @@
 import BoxList from "./BoxList"
 
+/** Renders app component. */
 function App() {
   return (
     <div className="App">

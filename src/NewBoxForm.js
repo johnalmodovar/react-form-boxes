@@ -1,20 +1,34 @@
 import BoxList from "./BoxList";
 import { useState } from 'react';
 
-
-// docstrings
 // remove console log from everywhere
+
+/** NewBoxForm: Form component for BoxList.
+ *
+ * Props -
+ * addBox(): add box to state in BoxList
+ *
+ * State -
+ * formData: object with => { width, height, bgColor, }
+ *
+ * BoxList -> NewBoxForm
+ */
+
 function NewBoxForm({ addBox }) {
   const initialState = { width: "", height: "", bgColor: "" };
   const [formData, setFormData] = useState(initialState);
-  console.log("formData inside NewBoxForm", formData)
 
+  /** handles submit event.
+   * - adds box to boxlist state.
+   * - resets form state to default.
+   */
   function handleSubmit(evt) {
     evt.preventDefault();
     addBox(formData);
     setFormData(initialState);
   }
 
+  /** handles changes in form. */
   function handleChange(evt) {
     const { name, value } = evt.target;
     setFormData((cData) => ({

@@ -13,7 +13,6 @@ import { useState } from 'react';
  */
 function BoxList() {
   const [boxes, setBoxes] = useState([]);
-  console.log("boxes in BoxList,", boxes)
 
   /** Add new box to state */
   function addBox(box) {
