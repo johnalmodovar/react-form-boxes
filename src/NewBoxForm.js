@@ -1,8 +1,13 @@
 import BoxList from "./BoxList";
+import { useState } from 'react';
 
+
+// docstrings
+// remove console log from everywhere
 function NewBoxForm({ addBox }) {
   const initialState = { width: "", height: "", bgColor: "" };
   const [formData, setFormData] = useState(initialState);
+  console.log("formData inside NewBoxForm", formData)
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -24,23 +29,29 @@ function NewBoxForm({ addBox }) {
       <input
         id="width"
         name="width"
-        value={formData.name}
+        value={formData.width}
         onChange={handleChange}
       ></input>
+      <br></br>
+
       <label htmlFor="height" /> Height:
       <input
         id="height"
         name="height"
-        value={formData.name}
+        value={formData.height}
         onChange={handleChange}
       ></input>
+      <br></br>
+
       <label htmlFor="bgColor" /> Background Color:
       <input
         id="bgColor"
         name="bgColor"
-        value={formData.name}
+        value={formData.bgColor}
         onChange={handleChange}
       ></input>
+      <br></br>
+
       <button>Submit</button>
     </form>
   );
